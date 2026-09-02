@@ -3,10 +3,10 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="A reproducible NeurIPS 2026 Education Track module for teaching executable verifier feedback loops for coding agents.">
+  <meta name="description" content="A reproducible NeurIPS 2026 Education Track module for teaching verification-centered software engineering with coding agents.">
   <meta name="author" content="Chenxi Luo, Moon-Kuen Mak, Wei Xiang, Tiejian Luo">
   <meta name="theme-color" content="#10231d">
-  <title>Executable Verifier Feedback Loops · NeurIPS 2026 Education</title>
+  <title>Verification-Centered Software Engineering · NeurIPS 2026 Education</title>
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="styles.css">
 </head>
@@ -14,8 +14,8 @@
   <a class="skip" href="#content">Skip to content</a>
   <header class="site-header">
     <a class="brand" href="#top" aria-label="Course home">
-      <span class="brand-mark">EV</span>
-      <span>Verifier Loops</span>
+      <span class="brand-mark">VC</span>
+      <span>Verification-Centered SE</span>
     </a>
     <nav aria-label="Primary navigation">
       <a href="#evidence">Evidence</a>
@@ -29,8 +29,8 @@
     <section class="hero" id="top">
       <div class="hero-copy">
         <p class="eyebrow">NeurIPS 2026 · Education Track Resource</p>
-        <h1>Teaching executable verifier feedback loops for coding agents.</h1>
-        <p class="lede">From candidate patches to evidence-backed change: learners make an agent’s proposal testable, revise it from counterexamples, and stop with a claim that says exactly what the evidence supports.</p>
+        <h1>Teaching verification-centered software engineering with coding agents.</h1>
+        <p class="lede">Learners validate intent, bound an agent, classify feedback, revise from counterexamples, state a property-scoped claim, and make a separate engineering approval decision.</p>
         <div class="actions">
           <a class="button primary" href="#method">See the feedback loop</a>
           <a class="button secondary" href="#contribution">Read our contribution</a>
@@ -43,9 +43,9 @@
       </div>
       <aside class="claim-card" aria-label="Central claim">
         <p class="card-label">CENTRAL CLAIM</p>
-        <p class="claim">“Generated” is not a software-engineering completion criterion.</p>
+        <p class="claim">Our learner—not the agent—is the primary object of improvement.</p>
         <div class="claim-rule"></div>
-        <p>Completion requires independent executable evidence, a named environment, a scoped property, and a separate human decision.</p>
+        <p>Correctness evidence, revision guidance, model opinion, and approval judgment answer different questions and permit different actions.</p>
       </aside>
     </section>
 
@@ -90,22 +90,22 @@
     <section class="section method-section" id="method">
       <div class="section-intro light">
         <p class="eyebrow">The technical concept</p>
-        <h2>A verifier-guided agent loop learners can inspect.</h2>
-        <p>The oracle is independent when it is not copied from the candidate or accepted from the model’s explanation. Passing supports only the named property in the named environment.</p>
+        <h2>An evidence-to-approval lifecycle learners can inspect.</h2>
+        <p>The oracle is independent when it is not copied from the candidate or accepted from the model’s explanation. Passing supports only the named property in the named environment; verified is not approved.</p>
       </div>
       <div class="loop" aria-label="Specification to agent candidate to verifier to evidence or counterexample to revision">
-        <div class="loop-node"><span>01</span><strong>Intent + specification</strong><small>S, environment X</small></div>
+        <div class="loop-node"><span>01</span><strong>Validate intent</strong><small>I → specification S</small></div>
         <span class="arrow" aria-hidden="true">→</span>
         <div class="loop-node"><span>02</span><strong>Agent candidate</strong><small>Patch C</small></div>
         <span class="arrow" aria-hidden="true">→</span>
         <div class="loop-node accent"><span>03</span><strong>Independent verifier</strong><small>V(C, S, X)</small></div>
         <span class="arrow" aria-hidden="true">→</span>
-        <div class="loop-node"><span>04</span><strong>Evidence / counterexample</strong><small>E or F</small></div>
+        <div class="loop-node"><span>04</span><strong>Evidence / counterexample</strong><small>E/F → revision R or claim K</small></div>
       </div>
       <div class="stop-rules">
         <div><b>Counterexample</b><span>Revise the candidate and preserve the failure evidence.</span></div>
         <div><b>Evidence supports scope</b><span>State the property and environment; do not claim universal correctness.</span></div>
-        <div><b>Evidence cannot decide</b><span>Escalate to specification, architecture, security, or human review.</span></div>
+        <div><b>Engineering approval</b><span>Architecture, security, policy, and accountable judgment decide approve or reject.</span></div>
       </div>
     </section>
 
@@ -115,11 +115,11 @@
         <h2>Not a fifth algorithm—a teachable integration.</h2>
       </div>
       <div class="contribution-layout">
-        <p class="big-statement">We connect oracle adequacy, interface design, specification fidelity, and search policy in one evidence-producing software-engineering workflow.</p>
+        <p class="big-statement">Self-improving-agent work improves generation and search. This resource improves the engineer’s evidence, claim calibration, and approval judgment.</p>
         <ol class="contribution-list">
-          <li><span>01</span><div><b>One bounded concept</b><p>A consistent candidate–verifier–feedback–revision vocabulary across testing, architecture, and authorization.</p></div></li>
-          <li><span>02</span><div><b>Observable learning</b><p>Evidence ledgers, counterexamples, diffs, and decision records replace prompt fluency as assessment evidence.</p></div></li>
-          <li><span>03</span><div><b>Assurance boundaries</b><p>Learners see why passing functionality does not settle intent, architecture, security, or approval.</p></div></li>
+          <li><span>01</span><div><b>Four signal classes</b><p>Correctness evidence, revision guidance, model opinion, and approval judgment are never collapsed into one score.</p></div></li>
+          <li><span>02</span><div><b>Observable learning</b><p>Evidence ledgers, counterexamples, scoped claims, and decision records replace prompt fluency as assessment evidence.</p></div></li>
+          <li><span>03</span><div><b>Deliberate boundary</b><p>Model training, RL, inference-time search, MCTS, prompt optimization, memory, and meta-agents are outside this module.</p></div></li>
           <li><span>04</span><div><b>Reproducible access</b><p>A prepared candidate produces the central result without model access, API cost, or network variability.</p></div></li>
         </ol>
       </div>
@@ -131,11 +131,12 @@
         <h2>From intent to defensible change.</h2>
       </div>
       <div class="timeline">
-        <article><span>00–20</span><h3>Problem → specification</h3><p>Separate stakeholder intent, executable property, and acceptance decision.</p></article>
-        <article><span>20–55</span><h3>Candidate + weak oracle</h3><p>Run a provenance-marked patch and resist equating a green suite with correctness.</p></article>
-        <article><span>55–90</span><h3>Counterexample + revision</h3><p>Add boundary and mutation cases, preserve evidence, and revise the candidate.</p></article>
-        <article><span>90–120</span><h3>Architecture + governance</h3><p>Compare test-equivalent implementations under architecture and security constraints.</p></article>
-        <article><span>120–150</span><h3>Authorization transfer</h3><p>Design a new verifier for a non-isomorphic document-access task.</p></article>
+        <article><span>00–15</span><h3>Signals + scope</h3><p>Separate evidence, revision guidance, model opinion, and approval judgment.</p></article>
+        <article><span>15–40</span><h3>Intent → specification</h3><p>Validate stakeholder intent before designing the executable property.</p></article>
+        <article><span>40–75</span><h3>Candidate + weak oracle</h3><p>Bound the agent, preserve provenance, and resist equating a green suite with correctness.</p></article>
+        <article><span>75–100</span><h3>Counterexample + revision</h3><p>Add boundary and mutation cases, preserve evidence, and calibrate the claim.</p></article>
+        <article><span>100–125</span><h3>Architecture + approval</h3><p>Compare test-equivalent systems and make a separate accountable decision.</p></article>
+        <article><span>125–150</span><h3>Authorization transfer</h3><p>Rebuild policy evidence for a non-isomorphic document-access task.</p></article>
       </div>
     </section>
 
@@ -143,9 +144,24 @@
       <div class="section-intro light">
         <p class="eyebrow">Reproducibility and review</p>
         <h2>Every claim leaves an inspectable artifact.</h2>
+        <p>The two slide PDFs are synchronized but serve complementary roles: one controls the learner-facing presentation; the other helps the teacher understand and explain every slide.</p>
+      </div>
+      <div class="deck-grid" aria-label="Complementary slide PDFs">
+        <article class="deck-card">
+          <span>PROJECT · 26 SLIDES · 16:9</span>
+          <h3>Classroom projection deck</h3>
+          <p>Concise learner-facing slides for staged disclosure, classification prompts, lab handoffs, and worked examples.</p>
+          <a class="resource-link" href="downloads/verifier_feedback_loops.pdf">Open classroom PDF</a>
+        </article>
+        <article class="deck-card">
+          <span>PREPARE · 26 PAGES · A4</span>
+          <h3>Instructor notes</h3>
+          <p>Page <em>n</em> supports slide <em>n</em> with teaching purpose, explanatory analogy, and classroom application. It complements rather than replaces the projection deck.</p>
+          <a class="resource-link" href="downloads/Instructor_Notes_Verification_Centered_SE.pdf">Open instructor PDF</a>
+        </article>
       </div>
       <div class="materials-grid">
-        <div><span>TEACH</span><h3>Slides + instructor guide</h3><p>A timed sequence, facilitation notes, misconceptions, and spoiler separation.</p></div>
+        <div><span>READ</span><h3>Two-page paper</h3><p>The concept, learner level, outcomes, four linked papers, and pedagogical synthesis.</p><a class="resource-link" href="downloads/main.pdf">Open paper PDF</a></div>
         <div><span>EXECUTE</span><h3>Notebook + exercise repos</h3><p>Prepared candidate, weak and stronger suites, architecture comparison, and transfer task.</p></div>
         <div><span>ASSESS</span><h3>Rubrics + evidence ledger</h3><p>Anchored pre/post items, claim-calibration rubric, decision record, and verification checklist.</p></div>
         <div><span>REPRODUCE</span><h3>One-command build</h3><p>Tests exercises, executes the notebook, rebuilds paper and deck, and produces licensed packages.</p></div>
@@ -158,7 +174,7 @@
   </main>
 
   <footer>
-    <div><span class="brand-mark">EV</span><p><strong>Executable Verifier Feedback Loops</strong><br>NeurIPS 2026 Education Track resource</p></div>
+    <div><span class="brand-mark">VC</span><p><strong>Verification-Centered Software Engineering</strong><br>NeurIPS 2026 Education Track resource</p></div>
     <p>Chenxi Luo · Moon-Kuen Mak · Wei Xiang · Tiejian Luo<sup>*</sup><br>La Trobe University · University of Chinese Academy of Sciences<br><sup>*</sup>Corresponding author: <a href="mailto:tjluo@ucas.ac.cn">tjluo@ucas.ac.cn</a></p>
   </footer>
 </body>
