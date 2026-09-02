@@ -1,0 +1,164 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="A reproducible NeurIPS 2026 Education Track module for teaching executable verifier feedback loops for coding agents.">
+  <meta name="theme-color" content="#10231d">
+  <title>Executable Verifier Feedback Loops · NeurIPS 2026 Education</title>
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a class="skip" href="#content">Skip to content</a>
+  <header class="site-header">
+    <a class="brand" href="#top" aria-label="Course home">
+      <span class="brand-mark">EV</span>
+      <span>Verifier Loops</span>
+    </a>
+    <nav aria-label="Primary navigation">
+      <a href="#evidence">Evidence</a>
+      <a href="#method">Method</a>
+      <a href="#course">Course</a>
+      <a href="#materials">Materials</a>
+    </nav>
+  </header>
+
+  <main id="content">
+    <section class="hero" id="top">
+      <div class="hero-copy">
+        <p class="eyebrow">NeurIPS 2026 · Education Track Resource</p>
+        <h1>Teaching executable verifier feedback loops for coding agents.</h1>
+        <p class="lede">From candidate patches to evidence-backed change: learners make an agent’s proposal testable, revise it from counterexamples, and stop with a claim that says exactly what the evidence supports.</p>
+        <div class="actions">
+          <a class="button primary" href="#method">See the feedback loop</a>
+          <a class="button secondary" href="#contribution">Read our contribution</a>
+        </div>
+        <ul class="facts" aria-label="Course facts">
+          <li><strong>150 min</strong><span>core workshop</span></li>
+          <li><strong>Advanced UG / Graduate</strong><span>AI and software engineering</span></li>
+          <li><strong>No paid API</strong><span>fully reproducible candidate</span></li>
+        </ul>
+      </div>
+      <aside class="claim-card" aria-label="Central claim">
+        <p class="card-label">CENTRAL CLAIM</p>
+        <p class="claim">“Generated” is not a software-engineering completion criterion.</p>
+        <div class="claim-rule"></div>
+        <p>Completion requires independent executable evidence, a named environment, a scoped property, and a separate human decision.</p>
+      </aside>
+    </section>
+
+    <section class="section evidence-section" id="evidence">
+      <div class="section-intro">
+        <p class="eyebrow">Why this belongs in today’s curriculum</p>
+        <h2>Four results. One emerging engineering workflow.</h2>
+        <p>The module does not treat these papers as interchangeable examples. Each identifies a different failure surface and motivates a directly assessed learner action.</p>
+      </div>
+      <div class="evidence-grid">
+        <article class="evidence-card evalplus">
+          <span class="paper-index">01 · EVALPLUS</span>
+          <h3>Generation ≠ correctness</h3>
+          <p>HumanEval+ expands tests by <strong>80×</strong>. Across 26 models, stricter evaluation lowers pass@k by as much as <strong>19.3–28.9%</strong> and can reverse rankings.</p>
+          <p class="teaching-link"><span>Teaching move</span> Strengthen a weak oracle with boundaries and mutations; narrow the claim after a counterexample.</p>
+          <cite>Liu et al., NeurIPS 2023</cite>
+        </article>
+        <article class="evidence-card sweagent">
+          <span class="paper-index">02 · SWE-AGENT</span>
+          <h3>Capability depends on interfaces</h3>
+          <p>An LM-oriented agent–computer interface resolves <strong>12.47%</strong> of 2,294 SWE-bench tasks and gives a <strong>64% relative gain</strong> over a shell-only agent on the Lite split.</p>
+          <p class="teaching-link"><span>Teaching move</span> Compare bounded action and observation designs while holding the model constant.</p>
+          <cite>Yang et al., NeurIPS 2024</cite>
+        </article>
+        <article class="evidence-card clever">
+          <span class="paper-index">03 · CLEVER</span>
+          <h3>Specification → machine check</h3>
+          <p>For <strong>161</strong> curated Lean tasks, specification equivalence and implementation correctness must both be proved. Current pipelines solve at most <strong>one</strong> end-to-end.</p>
+          <p class="teaching-link"><span>Teaching move</span> Validate intent before implementation evidence; a checker can certify the wrong property.</p>
+          <cite>Thakur et al., NeurIPS 2025</cite>
+        </article>
+        <article class="evidence-card reloc">
+          <span class="paper-index">04 · RELOC</span>
+          <h3>Generation becomes iterative search</h3>
+          <p>Code improvement becomes drafting, neighborhood generation, candidate evaluation, and incumbent update. Revision distance guides search when test rewards are sparse.</p>
+          <p class="teaching-link"><span>Teaching move</span> Record candidate states and use an explicit revise, accept, or escalate stop rule.</p>
+          <cite>Lyu et al., NeurIPS 2025</cite>
+        </article>
+      </div>
+    </section>
+
+    <section class="section method-section" id="method">
+      <div class="section-intro light">
+        <p class="eyebrow">The technical concept</p>
+        <h2>A verifier-guided agent loop learners can inspect.</h2>
+        <p>The oracle is independent when it is not copied from the candidate or accepted from the model’s explanation. Passing supports only the named property in the named environment.</p>
+      </div>
+      <div class="loop" aria-label="Specification to agent candidate to verifier to evidence or counterexample to revision">
+        <div class="loop-node"><span>01</span><strong>Intent + specification</strong><small>S, environment X</small></div>
+        <span class="arrow" aria-hidden="true">→</span>
+        <div class="loop-node"><span>02</span><strong>Agent candidate</strong><small>Patch C</small></div>
+        <span class="arrow" aria-hidden="true">→</span>
+        <div class="loop-node accent"><span>03</span><strong>Independent verifier</strong><small>V(C, S, X)</small></div>
+        <span class="arrow" aria-hidden="true">→</span>
+        <div class="loop-node"><span>04</span><strong>Evidence / counterexample</strong><small>E or F</small></div>
+      </div>
+      <div class="stop-rules">
+        <div><b>Counterexample</b><span>Revise the candidate and preserve the failure evidence.</span></div>
+        <div><b>Evidence supports scope</b><span>State the property and environment; do not claim universal correctness.</span></div>
+        <div><b>Evidence cannot decide</b><span>Escalate to specification, architecture, security, or human review.</span></div>
+      </div>
+    </section>
+
+    <section class="section contribution-section" id="contribution">
+      <div class="section-intro">
+        <p class="eyebrow">What this resource contributes</p>
+        <h2>Not a fifth algorithm—a teachable integration.</h2>
+      </div>
+      <div class="contribution-layout">
+        <p class="big-statement">We connect oracle adequacy, interface design, specification fidelity, and search policy in one evidence-producing software-engineering workflow.</p>
+        <ol class="contribution-list">
+          <li><span>01</span><div><b>One bounded concept</b><p>A consistent candidate–verifier–feedback–revision vocabulary across testing, architecture, and authorization.</p></div></li>
+          <li><span>02</span><div><b>Observable learning</b><p>Evidence ledgers, counterexamples, diffs, and decision records replace prompt fluency as assessment evidence.</p></div></li>
+          <li><span>03</span><div><b>Assurance boundaries</b><p>Learners see why passing functionality does not settle intent, architecture, security, or approval.</p></div></li>
+          <li><span>04</span><div><b>Reproducible access</b><p>A prepared candidate produces the central result without model access, API cost, or network variability.</p></div></li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="section course-section" id="course">
+      <div class="section-intro">
+        <p class="eyebrow">Core workshop · 150 minutes</p>
+        <h2>From intent to defensible change.</h2>
+      </div>
+      <div class="timeline">
+        <article><span>00–20</span><h3>Problem → specification</h3><p>Separate stakeholder intent, executable property, and acceptance decision.</p></article>
+        <article><span>20–55</span><h3>Candidate + weak oracle</h3><p>Run a provenance-marked patch and resist equating a green suite with correctness.</p></article>
+        <article><span>55–90</span><h3>Counterexample + revision</h3><p>Add boundary and mutation cases, preserve evidence, and revise the candidate.</p></article>
+        <article><span>90–120</span><h3>Architecture + governance</h3><p>Compare test-equivalent implementations under architecture and security constraints.</p></article>
+        <article><span>120–150</span><h3>Authorization transfer</h3><p>Design a new verifier for a non-isomorphic document-access task.</p></article>
+      </div>
+    </section>
+
+    <section class="section materials-section" id="materials">
+      <div class="section-intro light">
+        <p class="eyebrow">Reproducibility and review</p>
+        <h2>Every claim leaves an inspectable artifact.</h2>
+      </div>
+      <div class="materials-grid">
+        <div><span>TEACH</span><h3>Slides + instructor guide</h3><p>A timed sequence, facilitation notes, misconceptions, and spoiler separation.</p></div>
+        <div><span>EXECUTE</span><h3>Notebook + exercise repos</h3><p>Prepared candidate, weak and stronger suites, architecture comparison, and transfer task.</p></div>
+        <div><span>ASSESS</span><h3>Rubrics + evidence ledger</h3><p>Anchored pre/post items, claim-calibration rubric, decision record, and verification checklist.</p></div>
+        <div><span>REPRODUCE</span><h3>One-command build</h3><p>Tests exercises, executes the notebook, rebuilds paper and deck, and produces licensed packages.</p></div>
+      </div>
+      <aside class="boundary">
+        <strong>Claim boundary</strong>
+        <p>The package is pilot-ready. It does not claim human learning outcomes without participant data. A passing verifier supports explicit properties only; human approval remains a separate lifecycle gate.</p>
+      </aside>
+    </section>
+  </main>
+
+  <footer>
+    <div><span class="brand-mark">EV</span><p><strong>Executable Verifier Feedback Loops</strong><br>NeurIPS 2026 Education Track resource</p></div>
+    <p>Tiejian Luo · Moon-Kuen Mak · Chenxi Luo · Wei Xiang<br>University of Chinese Academy of Sciences · La Trobe University</p>
+  </footer>
+</body>
+</html>
