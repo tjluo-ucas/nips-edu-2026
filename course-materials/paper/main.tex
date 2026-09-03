@@ -1,0 +1,65 @@
+\documentclass{article}
+\usepackage[education,final]{neurips_2026}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{microtype}
+\usepackage{booktabs}
+\usepackage{hyperref}
+\usepackage{xcolor}
+\usepackage{amsmath}
+\hypersetup{colorlinks=true,linkcolor=black,citecolor=black,urlcolor=blue}
+\title{Teaching Verification-Centered Software Engineering with Coding Agents}
+\author{Chenxi Luo$^{1}$ \quad Moon-Kuen Mak$^{2}$ \quad Wei Xiang$^{1}$ \quad Tiejian Luo$^{2,\ast}$\\
+$^{1}$La Trobe University \quad $^{2}$University of Chinese Academy of Sciences\\
+$^{\ast}$Corresponding author: \href{mailto:tjluo@ucas.ac.cn}{\texttt{tjluo@ucas.ac.cn}}\\
+\href{https://tjluo-ucas.github.io/nips-edu-2026/}{\texttt{tjluo-ucas.github.io/nips-edu-2026}}}
+\begin{document}
+\maketitle
+
+\begin{abstract}
+As coding agents undertake longer software tasks, education must address how engineers can trust the resulting changes. We teach \emph{verification-centered software engineering}: validate intent, constrain the agent interface, challenge a candidate with independent executable evidence, revise from counterexamples, scope the supported claim, and make a separate architecture/security approval decision. EvalPlus, SWE-agent, CLEVER, and ReLoc motivate four failure surfaces. Our learner---not the agent---is the primary object of improvement.
+\end{abstract}
+
+\section{The Concept}
+Unlike self-improving-agent courses, which optimize model, search, reward, or planner performance, this module holds the agent fixed or bounded and improves the engineer's evidence and judgment. Its lifecycle is:
+\[
+\begin{aligned}
+I &\xrightarrow{\mathrm{validate}} S \rightarrow (\mathrm{Agent{+}ACI},X) \rightarrow C \xrightarrow{V} \{E,F\},\\
+\{E,F\} &\rightarrow R \rightarrow C'\;(\mathrm{repeat}) \rightarrow K \xrightarrow{J} \{\mathrm{approve,reject}\}.
+\end{aligned}
+\]
+Here intent $I$ becomes specification $S$; agent and interface act in environment $X$; verifier $V$ challenges candidate $C$; and evidence/counterexample informs revision $R$ or property-scoped claim $K$. Learners distinguish \textbf{correctness evidence} (what property is supported), \textbf{revision guidance} (what to try next), and \textbf{approval judgment} $J$ (whether the change should enter the lifecycle); model explanation is separately classified as opinion, not independent evidence. Passing $V$ is neither universal correctness nor approval.
+
+\section{Leveling and Prerequisite Knowledge}
+The resource targets \textbf{advanced undergraduate and graduate} AI/SE learners with basic Python, Git/diff, and unit-testing knowledge; no agent framework, LLM API, reinforcement learning, or formal methods are required. The 150-minute workshop spans specification through authorization transfer. A provenance-marked prepared candidate makes it reproducible without paid model access.
+
+\section{Learning Objectives and Outcomes}
+By the end, learners will \textbf{understand} signal categories; \textbf{apply} the lifecycle under a bounded agent--computer interface; \textbf{analyze} a weak verifier with boundaries and mutations; \textbf{evaluate} a scoped claim separately from architecture/security approval; and \textbf{create} an authorization-domain transfer solution.
+Assessment measures epistemic calibration and engineering judgment through anchored questions, a withheld suite, evidence/decision artifacts, and non-isomorphic transfer---not agent-building proficiency, prompts, tokens, or generated-code volume.
+
+\section{Linked Papers}
+The papers establish four complementary premises and map directly to assessed activities.
+
+\paragraph{EvalPlus: weak evidence.} HumanEval+ expands tests $80\times$; across 26 models, stricter tests reduce pass@$k$ by up to 19.3--28.9\% and can reverse rankings~\citep{evalplus}. Learners kill a mutation with boundary evidence, then replace ``correct'' with a suite-scoped claim.
+
+\paragraph{SWE-agent: interface design.} Its LM-oriented ACI provides search/edit actions, guardrails, and concise feedback; its Lite result is a 64\% relative gain over a shell-only agent with the same model~\citep{sweagent}. Learners hold the task fixed, compare interface contracts, and specify actions, observations, guardrails, and escalation.
+
+\paragraph{CLEVER: specification fidelity.} For 161 curated Lean tasks, CLEVER checks generated-specification equivalence and implementation correctness; evaluated pipelines solve at most one task end-to-end~\citep{clever}. Our accessible analogue separates stakeholder validation of $S$ from execution of $V$: a checker can certify the wrong property.
+
+\paragraph{ReLoc: revision guidance.} ReLoc decomposes improvement into drafting, neighborhood generation, evaluation, and incumbent update; revision distance guides search when public-test rewards are sparse~\citep{reloc}. Learners classify such a score as guidance, record each candidate/evidence state, and never relabel search preference as correctness evidence.
+
+Our pedagogical synthesis adds a fifth layer: \textbf{claim calibration and engineering approval}. More search may improve $C$; it does not define the evidence required to accept the change.
+
+\section{Teaching Materials Summary}
+Following a failure-surface $\rightarrow$ research evidence $\rightarrow$ minimal demonstration $\rightarrow$ learner action $\rightarrow$ executable artifact $\rightarrow$ transfer sequence, the package provides slides/PPTX, notebook, provenance-marked patch, weak/withheld suites, test-equivalent architectural alternatives, authorization transfer, contracts, ledgers, rubrics, and a pilot protocol. Staged bundles separate worked answers; one build tests and packages the resource. No human learning outcome is claimed.
+
+{\footnotesize
+\begin{thebibliography}{9}
+\bibitem[Liu et~al.(2023)]{evalplus} Jiawei Liu, Chunqiu Steven Xia, Yuyao Wang, and Lingming Zhang. \emph{Is Your Code Generated by ChatGPT Really Correct? Rigorous Evaluation of Large Language Models for Code Generation}. NeurIPS 2023.
+\bibitem[Yang et~al.(2024)]{sweagent} John Yang et al. \emph{SWE-agent: Agent-Computer Interfaces Enable Automated Software Engineering}. NeurIPS 2024.
+\bibitem[Thakur et~al.(2025)]{clever} Amitayush Thakur et al. \emph{CLEVER: A Curated Benchmark for Formally Verified Code Generation}. NeurIPS 2025, Datasets and Benchmarks Track.
+\bibitem[Lyu et~al.(2025)]{reloc} Zhiyi Lyu et al. \emph{Let's Revise Step-by-Step: A Unified Local Search Framework for Code Generation with LLMs}. NeurIPS 2025.
+\end{thebibliography}
+}
+
+\end{document}

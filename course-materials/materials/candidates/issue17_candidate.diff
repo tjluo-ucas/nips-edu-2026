@@ -1,0 +1,10 @@
+--- baseline/discount.py
++++ src/discount.py
+@@ -7,4 +7,6 @@
+         raise ValueError("order_total must be non-negative")
+     if not is_member:
+         return 0.0
+-    return min(round(order_total * 0.10, 2), 25.0)
++    if order_total > 100.0:
++        return min(round(order_total * 0.10, 2), 25.0)
++    return 0.0

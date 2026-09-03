@@ -1,0 +1,10 @@
+candidate_id: C-017
+issue_id: ISSUE-17
+origin: instructor_prepared_agent_simulation
+claim: "Plausible candidate for teaching; not represented as output from a specific model run."
+baseline: exercise_repo/baseline/discount.py
+candidate: exercise_repo/src/discount.py
+diff: candidates/issue17_candidate.diff
+learner_visible_tests: exercise_repo/tests/test_visible.py
+state: candidate
+approval: not_approved

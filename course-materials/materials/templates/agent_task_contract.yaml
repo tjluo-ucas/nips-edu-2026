@@ -1,0 +1,36 @@
+task_id: EDU-CHANGE-001
+objective: "Describe the bounded software change."
+context:
+  issue: ""
+  relevant_files: []
+scope:
+  include: []
+  exclude: []
+allowed_tools:
+  - repo.read
+  - repo.search
+  - file.edit_scoped
+  - test.run
+forbidden_actions:
+  - secret.read
+  - production.write
+  - dependency_add_without_review
+observations:
+  - concise_command_result
+  - changed_files_summary
+  - verifier_failure_with_location
+guardrails:
+  - reject_out_of_scope_write
+  - redact_secret_like_output
+acceptance_criteria: []
+verification:
+  - command: ""
+    expected: ""
+stop_conditions:
+  - requirement_ambiguous
+  - scope_expansion_required
+  - repeated_failure_3_times
+human_approval:
+  required_for:
+    - merge
+    - security_exception
