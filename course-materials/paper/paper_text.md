@@ -14,5 +14,5 @@ architecture/security approval decision.
 - Advanced Software Engineering (ASE): 2008-2019.
 - Intelligent Software Engineering (ISE): 2019-2026.
 - The prior curriculum is teaching context; the submitted technical concept and all packaged artifacts were newly assembled for the 2026 Education Track.
-- Authors: Chenxi Luo (La Trobe University), Moon-Kuen Mak (University of Chinese Academy of Sciences), Wei Xiang (La Trobe University), Tiejian Luo (University of Chinese Academy of Sciences; corresponding author, tjluo@ucas.ac.cn).
+- Authors: Tiejian Luo (University of Chinese Academy of Sciences; corresponding author, tjluo@ucas.ac.cn), Chenxi Luo (La Trobe University), Moon-Kuen Mak (University of Chinese Academy of Sciences), Wei Xiang (La Trobe University).
 - Related teaching research: Min Yao and Tiejian Luo, “Practice and Reflection on the Cultivation of Creativity in Software Engineering Teaching,” Journal of Engineering Studies, 16(5), 2024.

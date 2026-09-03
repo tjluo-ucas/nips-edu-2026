@@ -6,7 +6,7 @@
 
 > **Course lineage.** This module comes from a long-running curriculum: Advanced Software Engineering (2008-2019), followed by Intelligent Software Engineering (2019-2026). The agentic-era activities extend, rather than replace, the established emphasis on real problems, modeling, architecture, verification, creativity, and reflective engineering judgment.
 
-This resource is derived from the **Intelligent Software Engineering** course, which evolved from the earlier **Advanced Software Engineering** teaching practice. Authors: **Chenxi Luo** and **Wei Xiang** (La Trobe University), **Moon-Kuen Mak** and **Tiejian Luo** (University of Chinese Academy of Sciences). Corresponding author: **Tiejian Luo** (`tjluo@ucas.ac.cn`).
+This resource is derived from the **Intelligent Software Engineering** course, which evolved from the earlier **Advanced Software Engineering** teaching practice. Authors: **Tiejian Luo** (University of Chinese Academy of Sciences), **Chenxi Luo** (La Trobe University), **Moon-Kuen Mak** (University of Chinese Academy of Sciences), and **Wei Xiang** (La Trobe University). Corresponding author: **Tiejian Luo** (`tjluo@ucas.ac.cn`).
 
 A related published teaching-study anchor is: **Min Yao and Tiejian Luo (2024), _Practice and Reflection on the Cultivation of Creativity in Software Engineering Teaching_, Journal of Engineering Studies, 16(5)**. It documents the course team's emphasis on creativity cultivation and reflective software engineering pedagogy, which this AI-agent-era module extends.
 

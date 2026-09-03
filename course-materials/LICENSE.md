@@ -1,6 +1,6 @@
 # Dual License
 
-Copyright (c) 2026 Chenxi Luo, Moon-Kuen Mak, Wei Xiang, and Tiejian Luo.
+Copyright (c) 2026 Tiejian Luo, Chenxi Luo, Moon-Kuen Mak, and Wei Xiang.
 
 ## Educational content
 
@@ -13,7 +13,7 @@ credit is given, a link to the license is supplied, and changes are indicated.
 
 Suggested attribution:
 
-> Chenxi Luo, Moon-Kuen Mak, Wei Xiang, and Tiejian Luo (2026), “Teaching
+> Tiejian Luo, Chenxi Luo, Moon-Kuen Mak, and Wei Xiang (2026), “Teaching
 > Verification-Centered Software Engineering with Coding Agents,” NeurIPS 2026
 > Education Track resource, CC BY 4.0.
 

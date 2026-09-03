@@ -1,7 +1,7 @@
 ---
 title: "Teaching Verification-Centered Software Engineering with Coding Agents"
 subtitle: "From candidate patches to evidence-backed claims and human judgment"
-author: "Chenxi Luo · Moon-Kuen Mak · Wei Xiang · Tiejian Luo*"
+author: "Tiejian Luo* · Chenxi Luo · Moon-Kuen Mak · Wei Xiang"
 institute: "La Trobe University · University of Chinese Academy of Sciences"
 date: "NeurIPS 2026 Education Track · * Corresponding author: tjluo@ucas.ac.cn"
 lang: en

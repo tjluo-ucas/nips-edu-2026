@@ -21,7 +21,7 @@ The resource is an AI-agent-era evolution of a sustained software engineering te
 
 This lineage is complemented by published teaching research: Min Yao and Tiejian Luo, *Practice and Reflection on the Cultivation of Creativity in Software Engineering Teaching*, Journal of Engineering Studies, 16(5), 2024.
 
-**Authors:** Chenxi Luo and Wei Xiang (La Trobe University); Moon-Kuen Mak and Tiejian Luo (University of Chinese Academy of Sciences). **Corresponding author:** Tiejian Luo (`tjluo@ucas.ac.cn`).
+**Authors:** Tiejian Luo (University of Chinese Academy of Sciences), Chenxi Luo (La Trobe University), Moon-Kuen Mak (University of Chinese Academy of Sciences), and Wei Xiang (La Trobe University). **Corresponding author:** Tiejian Luo (`tjluo@ucas.ac.cn`).
 
 ## Suggested formats
 

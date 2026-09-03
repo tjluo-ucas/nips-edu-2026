@@ -116,7 +116,7 @@ effectiveness.
 
 ## Authors
 
-Chenxi Luo · Moon-Kuen Mak · Wei Xiang · Tiejian Luo\*<br>
+Tiejian Luo\* · Chenxi Luo · Moon-Kuen Mak · Wei Xiang<br>
 La Trobe University · University of Chinese Academy of Sciences<br>
 \* Corresponding author: Tiejian Luo — <tjluo@ucas.ac.cn>
 
